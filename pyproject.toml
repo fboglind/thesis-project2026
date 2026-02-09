@@ -1,0 +1,30 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thesis_project"
+version = "0.1.0"
+description = "Embedding-based graded scoring of paraphasic errors in neuropsychological language tests"
+authors = [{ name = "Fredrik Boglind", email = "frbo5627@student.su.se" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"  # KB-BERT/transformers work better with 3.10+
+
+dependencies = [
+    "torch",
+    "transformers",
+    "pandas",
+    "numpy",
+    "scipy",
+    "pyyaml",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "jupyter", "black", "ruff"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false

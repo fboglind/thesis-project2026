@@ -1,6 +1,44 @@
 # configs/_default_configs.yaml
 paths:
   data_dir: data/xlsx
-  processed_data_dir: data/processed
+  processed_dir: data/processed
   notebooks_dir: notebooks
   model_dir: models
+  outputs_dir: outputs
+  scripts_dir: scripts
+  tests_dir: tests
+  
+model:
+  name: "KB/bert-base-swedish-cased-new"  # Define when model is downloaded
+  embedding_strategy: "mean_pooling"       # Options: cls_token, mean_pooling
+  max_length: 128
+  batch_size: 32
+
+scoring:
+  similarity_metric: "cosine"
+   # NOTE: Placeholder values - to be determined through analysis, could be test-specific (for BNT, SVF..)
+  thresholds:
+    correct: 0.85
+    semantically_related: 0.50
+    unrelated: 0.0
+
+preprocessing:
+  lowercase: true
+  remove_articles: true
+  lemmatize: true
+  language: "sv"
+
+data:
+  tests:
+    - name: "bnt"
+      file: "BNT-syntheticData_v2.xlsx"
+      type: "confrontation_naming"
+      has_gold_column: true
+    - name: "svf"
+      file: "SVF-syntheticData_v1.xlsx"
+      type: "semantic_fluency"
+      has_gold_column: false
+    - name: "fas"
+      file: "FAS-syntheticData_v1.xlsx"
+      type: "phonemic_fluency"
+      has_gold_column: false
