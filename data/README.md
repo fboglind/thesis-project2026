@@ -75,7 +75,7 @@ Participants produce words starting with F, A, S; stored as comma-separated trip
 | 20 | `Age:` | numeric (years) |
 | 21 | `Category:` | `HC`, `MCI`, `AD`, `non-AD` |
 
-**Note:** Proper nouns marked with angle brackets: `<Stockholm>`, `<Anna>`
+**Note:** Proper nouns/NERs marked with angle brackets: `<Stockholm>`, `<Anna>`
 
 ---
 

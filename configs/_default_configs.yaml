@@ -1,0 +1,6 @@
+# configs/_default_configs.yaml
+paths:
+  data_dir: data/xlsx
+  processed_data_dir: data/processed
+  notebooks_dir: notebooks
+  model_dir: models
